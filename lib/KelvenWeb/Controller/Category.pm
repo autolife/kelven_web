@@ -162,12 +162,14 @@ sub update_pri {
   my $desc = $self->param("category_desc");
   my $edit_id = $self->session('edit_id');
   my $category = $self->session('category');
-  my $sql;
+  my ($sql, $sql2, $sql3);
   if ($sess) {
     my $dbh = DBI->connect("DBI:mysql:database=$CMSConfig::database;host=$CMSConfig::host","$CMSConfig::user","$CMSConfig::pass", {RaiseError => 1, AutoCommit => 0});
     if ($name) {
       # $_ = encode 'utf8', $_ for ($name, $desc);
       $sql = qq{update Category set name = "$name", description = "$desc" where id = "$edit_id"};
+      $sql2 = qq{update Image set category = "$name" where category="$category"};
+      $sql3 = qq{update Articles set category = "$name" where category = "$category"};
       $dbh->do($sql);
       $self->stash(admin => $sess);
       $self->redirect_to('/category/index');
@@ -234,14 +236,18 @@ sub update_sub {
   my $name = $self->param("subcategory_name");
   my $desc = $self->param("subcategory_desc");
   my $category = $self->session('category');
-  my $sql;
+  my ($sql, $sql2, $sql3);
   if ($sess) {
     my $dbh = DBI->connect("DBI:mysql:database=$CMSConfig::database;host=$CMSConfig::host","$CMSConfig::user","$CMSConfig::pass", {RaiseError => 1, AutoCommit => 0});
     $subedit_title = decode 'utf8', $subedit_title;
     if ($name) {
       # $_ = encode 'utf8', $_ for ($name, $desc, $cname);
       $sql = qq{update Subcategory set name = "$name", description = "$desc",  belong_to = "$cname" where belong_to = "$subedit_id" and name = "$subedit_title"};
+      $sql2 = qq{update Image set subcategory = "$name" where subcategory="$subedit_title"};
+      $sql3 = qq{update Articles set subcategory = "$name" where subcategory = "$subedit_title"};
       $dbh->do($sql);
+      $dbh->do($sql2);
+      $dbh->do($sql3);
       $self->stash(admin => $sess);
       $self->redirect_to('/category/index');
       $dbh->commit;

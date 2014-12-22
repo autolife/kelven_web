@@ -23,6 +23,7 @@
 % $cou2->finish;
 % $dbh->disconnect;
 % session edit_id => $edit_id;
+% session category => $edit_title;
 
   <div id="AdminContent">
     <div class="AdminBody">
