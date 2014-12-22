@@ -53,6 +53,7 @@
               <select id="subcategory" name="subcategory" class="form-control">
               </select>
               <select id="model" name="model" class="form-control">
+                <option value="">请选择模板</option>
                 <option value="c">普通文章</option>
                 <option value="l">文章列表</option>
                 <option value="s">单页图片集</option>
@@ -68,7 +69,7 @@
         </div>
       </div>
       %= text_area content => '', id => 'summernote', cols => '40';
-      %= input_tag button => '发布', id => 'publish', class => 'btn btn-primary', type => 'submit', onclick=>'sm1()';
+      %= input_tag button => '发布', id => 'publish', class => 'btn btn-primary', type => 'submit';
     </div>
 
   <script src="/bootstrap/js/jquery.min.js"></script>
@@ -108,10 +109,11 @@
           maxHeight: null,             // set maximum height of editor
           focus: true,                 // set focus to editable area after initializing summernote
         });
-        $("tbody tr:odd").css("background-color", "#f9f9f9");
-        $('#checkAll,#CheckAll').click(function () {
-           $('input:checkbox').not(this).prop('checked', this.checked);
-         });
+        $('#publish').click(function(e){
+          e.preventDefault();
+          $('textarea[name="content"]').html($('#summernote').code());
+          sm1();
+        });
         $('#item-filter').change(function(){
           var id = $(this).val();
           $.ajax({
@@ -130,9 +132,6 @@
           });
         });
       });
-      var postForm = function(){
-        var content = $('textarea[name="content"]').html($('#summernote').code());
-      };
   </script>
 
   </div>

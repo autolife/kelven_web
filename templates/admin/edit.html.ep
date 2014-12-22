@@ -63,7 +63,7 @@
       </div>
       <div style="display:none" id="content"><%== $content %></div>
       %= text_area content => '', id => 'summernote', cols => '40';
-      %= input_tag button => '发布', id => 'publish', class => 'btn btn-primary', type => 'submit', onclick=>'sm1()';
+      %= input_tag button => '发布', id => 'publish', class => 'btn btn-primary', type => 'submit';
     </div>
 
   <script src="/bootstrap/js/jquery.min.js"></script>
@@ -111,30 +111,28 @@
           maxHeight: null,             // set maximum height of editor
           focus: true,                 // set focus to editable area after initializing summernote
         });
-        $("tbody tr:odd").css("background-color", "#f9f9f9");
-        $('#checkAll,#CheckAll').click(function () {
-           $('input:checkbox').not(this).prop('checked', this.checked);
-         });
         $('#summernote').code($('#content').html());
-      });
-      var postForm = function(){
-        var content = $('textarea[name="content"]').html($('#summernote').code());
-      };
-      $('#item-filter').change(function(){
-        var id = $(this).val();
-        $.ajax({
-          type: "POST",
-          url:  "/ajax/subc",
-          data: {name: id},
-          dataType: "json",
-          success: function(data){
-            var option = '';
-            $.each(data, function(index, entry){
-              option += '<option value="' + entry.name + '">' + entry.name + '</option>';
-            });
-            $('#subcategory').empty();
-            $('#subcategory').html(option);
-          }
+        $('#publish').click(function(e){
+          e.preventDefault();
+          $('textarea[name="content"]').html($('#summernote').code());
+          sm1();
+        });
+        $('#item-filter').change(function(){
+          var id = $(this).val();
+          $.ajax({
+            type: "POST",
+            url:  "/ajax/subc",
+            data: {name: id},
+            dataType: "json",
+            success: function(data){
+              var option = '';
+              $.each(data, function(index, entry){
+                option += '<option value="' + entry.name + '">' + entry.name + '</option>';
+              });
+              $('#subcategory').empty();
+              $('#subcategory').html(option);
+            }
+          });
         });
       });
   </script>

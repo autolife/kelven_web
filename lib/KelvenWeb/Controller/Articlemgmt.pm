@@ -106,7 +106,7 @@ sub insert {
   my $dbh = DBI->connect("DBI:mysql:database=$CMSConfig::database;host=$CMSConfig::host","$CMSConfig::user","$CMSConfig::pass", {RaiseError => 1, AutoCommit => 0});
   my @param = $self->param(['title', 'content', 'category', 'subcategory', 'model']);
   $_ = encode 'utf8', @param;
-  if (!$param[2] && !$param[3] && !$param[4]) {
+  if (!$param[2] && !$param[3] || !$param[4]) {
     $self->render(text => '请选择标题和模板');
   } elsif ($sess) {
     my $sql = qq{insert into Articles (title, content, date, category, subcategory, author, url, model) values (?, ?, curdate(), ?, ?, ?, ?, ?);};
