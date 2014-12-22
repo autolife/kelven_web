@@ -157,19 +157,24 @@ sub edit {
 
 sub update_pri {
   my $self = shift;
-  my $sess = $self->session('user_id');
   my $name = $self->param("category_name");
   my $desc = $self->param("category_desc");
+  my $sess = $self->session('user_id');
   my $edit_id = $self->session('edit_id');
   my $category = $self->session('category');
+  $category = decode 'utf8', $category;
   my ($sql, $sql2, $sql3);
   if ($sess) {
     my $dbh = DBI->connect("DBI:mysql:database=$CMSConfig::database;host=$CMSConfig::host","$CMSConfig::user","$CMSConfig::pass", {RaiseError => 1, AutoCommit => 0});
     if ($name) {
+      my $sth = $dbh->prepare(qq{select name from Category where id = "$edit_id"});
+      $sth->execute();
+      my @result = $sth->fetchrow_array();
+      $sth->finish();
       my $name2 = encode 'utf8', $name;
       $sql = qq{update Category set name = "$name", description = "$desc" where id = "$edit_id"};
-      $sql2 = qq{update Image set category = "$name" where category = "$category"};
-      $sql3 = qq{update Articles set category = "$name" where category = "$category"};
+      $sql2 = qq{update Image set category = "$name2" where category = "$result[0]"};
+      $sql3 = qq{update Articles set category = "$name2" where category = "$result[0]"};
       $dbh->do($sql);
       $self->stash(admin => $sess);
       $self->redirect_to('/category/index');
