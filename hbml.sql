@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.37, for FreeBSD10.0 (amd64)
+-- MySQL dump 10.13  Distrib 5.5.40, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: hbml
 -- ------------------------------------------------------
--- Server version	5.5.37-log
+-- Server version	5.5.40-0ubuntu0.14.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -170,7 +170,7 @@ CREATE TABLE `IndexDev` (
 
 LOCK TABLES `IndexDev` WRITE;
 /*!40000 ALTER TABLE `IndexDev` DISABLE KEYS */;
-INSERT INTO `IndexDev` VALUES ('ä¸€æµçš„åŠ å·¥è®¾å¤‡å’Œç²¾æ¹›çš„åŠ å·¥æŠ€æœ¯','æˆ‘ä»¬æ‹¥æœ‰è€…ä¸¥æ ¼çš„å·¥è‰ºæµç¨‹å’Œç²¾æ¹›åŠ å·¥æŠ€æœ¯ä»¥ä¿è¯äº§å“è¾¾åˆ°è®¾è®¡è¦æ±‚ã€‚åŒæ—¶æˆ‘ä»¬ä¹Ÿä¸ºå®¢æˆ·æä¾›ç²¾ç¡®çš„åŠ å·¥æœåŠ¡ã€‚','/upload/e06da759bf9ba122bdf732337546e214.jpg');
+INSERT INTO `IndexDev` VALUES ('ä¸€æµçš„åŠ å·¥è®¾å¤‡å’Œç²¾æ¹›çš„åŠ å·¥æŠ€æœ¯','æˆ‘ä»¬æ‹¥æœ‰ç€ä¸¥æ ¼çš„å·¥è‰ºæµç¨‹å’Œç²¾æ¹›åŠ å·¥æŠ€æœ¯ä»¥ä¿è¯äº§å“è¾¾åˆ°è®¾è®¡è¦æ±‚ã€‚åŒæ—¶æˆ‘ä»¬ä¹Ÿä¸ºå®¢æˆ·æä¾›ç²¾ç¡®çš„åŠ å·¥æœåŠ¡ã€‚','/upload/e06da759bf9ba122bdf732337546e214.jpg');
 /*!40000 ALTER TABLE `IndexDev` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -260,7 +260,7 @@ CREATE TABLE `IndexQDev` (
 
 LOCK TABLES `IndexQDev` WRITE;
 /*!40000 ALTER TABLE `IndexQDev` DISABLE KEYS */;
-INSERT INTO `IndexQDev` VALUES ('ä¸ºäº§å“æä¾›æ›´å¤šä¿éšœ','æˆ‘ä»¬æ‹¥æœ‰å¤šé’Ÿå®žéªŒè®¾å¤‡ä»¥ä¿éšœå®¢æˆ·å¤šæ ·çš„è´¨é‡éœ€æ±‚','/upload/6a9913965d5fb6f8c901160c29c78a74.jpg','/upload/94e8e48608fde4607c50c7d83b889f02.jpg','/upload/4d276e077f08c51be25a7143e295273c.jpg','/upload/0e7530a862f3e97ce2da601018051e93.jpg','/upload/c5137803f47bdab152dffb90f2698db6.jpg');
+INSERT INTO `IndexQDev` VALUES ('ä¸ºäº§å“æä¾›æ›´å¤šä¿éšœ','æˆ‘ä»¬æ‹¥æœ‰å¤šç§å®žéªŒè®¾å¤‡ä»¥ä¿éšœå®¢æˆ·å¤šæ ·çš„è´¨é‡éœ€æ±‚','/upload/6a9913965d5fb6f8c901160c29c78a74.jpg','/upload/94e8e48608fde4607c50c7d83b889f02.jpg','/upload/4d276e077f08c51be25a7143e295273c.jpg','/upload/0e7530a862f3e97ce2da601018051e93.jpg','/upload/c5137803f47bdab152dffb90f2698db6.jpg');
 /*!40000 ALTER TABLE `IndexQDev` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -350,4 +350,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-12-22 16:24:42
+-- Dump completed on 2014-12-22 17:19:48
