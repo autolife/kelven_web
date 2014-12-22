@@ -55,7 +55,8 @@ div[class="jumbotron"] {
 }
 
 #slogan {
-  margin-top: -20px;
+  margin-top: -40px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
@@ -91,13 +92,26 @@ div[class="jumbotron"] {
 
 #cover {
   color: #ddd;
-  background-image: url(../imgsrc/index_bg.jpg);
-  background-position:center;
+  padding: 0;
+  /* background-image: url(../imgsrc/index_bg.jpg); */
+  /* background-position:center; */
+}
+
+#caro {
+  position: relative;
+  top: 0px;
+}
+
+.carousel-inner {
+  height: 500px;
 }
 
 #navigation {
   margin: 0;
   padding: 0;
+  position: relative;
+  top: 60px;
+  z-index: 999;
   list-style: none;
 }
 
