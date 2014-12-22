@@ -166,13 +166,14 @@ sub update_pri {
   if ($sess) {
     my $dbh = DBI->connect("DBI:mysql:database=$CMSConfig::database;host=$CMSConfig::host","$CMSConfig::user","$CMSConfig::pass", {RaiseError => 1, AutoCommit => 0});
     if ($name) {
-      # $_ = encode 'utf8', $_ for ($name, $desc);
+      my $name2 = encode 'utf8', $name;
       $sql = qq{update Category set name = "$name", description = "$desc" where id = "$edit_id"};
-      $sql2 = qq{update Image set category = "$name" where category="$category"};
+      $sql2 = qq{update Image set category = "$name" where category = "$category"};
       $sql3 = qq{update Articles set category = "$name" where category = "$category"};
       $dbh->do($sql);
       $self->stash(admin => $sess);
       $self->redirect_to('/category/index');
+      # $self->render(text => "$name $category");
       $dbh->commit;
     }
     else {
