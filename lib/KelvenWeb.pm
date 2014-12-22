@@ -21,6 +21,9 @@ sub startup {
     }
   }
 
+  #listen on 80 port
+  $self->app->config(hypnotoad => {listen => ['http://*:80']});
+
   # Router
   my $r = $self->routes;
 
