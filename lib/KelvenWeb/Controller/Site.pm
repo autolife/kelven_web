@@ -16,10 +16,6 @@ sub show {
   }
 }
 
-sub register {
-  my $self = shift;
-}
-
 sub adduser {
   my $dbh = DBI->connect("DBI:mysql:database=$CMSConfig::database;host=$CMSConfig::host","$CMSConfig::user","$CMSConfig::pass", {RaiseError => 1, AutoCommit => 0});
   my $self = shift;

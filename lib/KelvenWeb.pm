@@ -53,8 +53,10 @@ sub startup {
   $r->get('/image/index')->to('image#index');
   $r->get('/index/index/')->to('index#admin');
   $r->get('/site/index')->to('site#show');
+  $r->get('/recommend/index')->to('recommend#show');
 
   # for actions
+  $r->post('/recommend/update')->to('recommend#update');
   $r->post('/site/deluser')->to('site#deluser');
   $r->post('/site/adduser')->to('site#adduser');
   $r->post('/site/edituser')->to('site#edituser');

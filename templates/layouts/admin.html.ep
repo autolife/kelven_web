@@ -40,6 +40,7 @@
       <li><a href="/admin/index"><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;文章管理</a></li>
       <li><a href="/category/index"><span class="glyphicon glyphicon-folder-close"></span>&nbsp;&nbsp;分类管理</a></li>
       <li><a href="/image/index"><span class="glyphicon glyphicon-picture"></span>&nbsp;&nbsp;图片管理</a></li>
+      <li><a href="/recommend/index"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;&nbsp;推荐产品</a></li>
       <li><a href="/site/index"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;用户管理</a></li>
     </ul>
   </div>

@@ -51,7 +51,12 @@
 % my @l_count = $sth7->fetchrow_array();
 % $sth7->finish;
 % my $l_count = $l_count[0];
+% my $pdts = $dbh->prepare(qq{select * from Recommend});
+% $pdts->execute();
+% my @prodts = $pdts->fetchrow_array();
+% $pdts->finish();
 % $dbh->disconnect;
+% my $prodts;
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -185,6 +190,13 @@
             % } else {
               % $amount = $remain;
             % }
+            %# if ($title = encode 'utf8', '产品橱窗') {
+            %#   for (@prodts) {
+            %#     push @{$prodts}, ['', $_] if $_;
+            %#   }
+            %#   $amount += scalar @{$prodts};
+            %#   $imglist = [map {$_} @{$prodts}, @{$imglist}]
+            %# }
             %= tag div => (class => 'row') => begin
               % for (1 .. $amount) {
                 %= tag div => (class => "col-md-3") => begin
