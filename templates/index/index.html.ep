@@ -129,6 +129,38 @@
                   <label for="image3" class="col-sm-1 control-label" style="position:relative;top:7px;">右侧图片</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="image3" name = "image3" placeholder="图片地址" value="<%= decode 'utf8', $r3[4]%>">
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-top:10px">
+                <div class="form-group">
+                  <label for="image3" class="col-sm-1 control-label" style="position:relative;top:7px;">图片一</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="image4" name = "image4" placeholder="图片地址" value="<%= decode 'utf8', $r3[5]%>">
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-top:10px">
+                <div class="form-group">
+                  <label for="image3" class="col-sm-1 control-label" style="position:relative;top:7px;">图片二</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="image5" name = "image5" placeholder="图片地址" value="<%= decode 'utf8', $r3[6]%>">
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-top:10px">
+                <div class="form-group">
+                  <label for="image3" class="col-sm-1 control-label" style="position:relative;top:7px;">图片三</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="image6" name = "image6" placeholder="图片地址" value="<%= decode 'utf8', $r3[7]%>">
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="margin-top:10px">
+                <div class="form-group">
+                  <label for="image3" class="col-sm-1 control-label" style="position:relative;top:7px;">图片三</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="image7" name = "image7" placeholder="图片地址" value="<%= decode 'utf8', $r3[8]%>">
                     %= input_tag modify => "更新", type => 'submit', class => "btn btn-default", style => 'width:60px;margin-top:10px;', onclick => "sm3()";
                   </div>
                 </div>

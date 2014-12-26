@@ -31,7 +31,7 @@
 % $t5->finish;
 % $t6->finish;
 % my @r3linkset;
-% for (2 .. 4) {
+% for (2 .. 8) {
 %   my $r3l = $dbh->prepare(qq{select linked_to from Image where url = "$r3[$_]"});
 %   $r3l->execute;
 %   my @r3link = $r3l->fetchrow_array();
@@ -40,7 +40,7 @@
 %   push @r3linkset, $r3link[0];
 % }
 % my @r3linkset2;
-% for (2 .. 4) {
+% for (2 .. 8) {
 %   my $r3l = $dbh->prepare(qq{select description from Image where url = "$r3[$_]"});
 %   $r3l->execute;
 %   my @r3link = $r3l->fetchrow_array();
@@ -289,6 +289,41 @@
           </div>
         </div>
       </div>
+      <div class="row" style="margin-top: 20px">
+        <div class="col-md-3">
+          <a href="<%= $r3linkset[3] %>" class="thumbnail" style="height:250px">
+            <img class="img-responsive" src="<%= $r3[5] %>">
+          </a>
+          <div class="caption caption-align">
+            <%= $r3linkset2[3] %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <a href="<%= $r3linkset[4]%>" class="thumbnail" style="height:250px">
+            <img class="img-responsive" src="<%= $r3[6] %>">
+          </a>
+          <div class="caption caption-align">
+            <%= $r3linkset2[4] %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <a href="<%= $r3linkset[5]%>" class="thumbnail" style="height:250px">
+            <img class="img-responsive" src="<%= $r3[7] %>">
+          </a>
+          <div class="caption-align">
+            <%= $r3linkset2[5] %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <a href="<%= $r3linkset[6]%>" class="thumbnail" style="height:250px">
+            <img class="img-responsive" src="<%= $r3[8] %>">
+          </a>
+          <div class="caption-align">
+            <%= $r3linkset2[6] %>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 

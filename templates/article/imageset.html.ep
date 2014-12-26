@@ -27,9 +27,9 @@
 % my $sql;
 % my $ca = decode "utf8", $category;
 % my $su = decode 'utf8', $subcategory;
-% if ($subcategory) {
+% if ($subcategory && $subcategory ne $title) {
 %   $sql = qq{select * from Image where category = "$ca" and subcategory = "$su" and article_i = $id order by description limit ?, ?;};
-% } elsif ($subcategory and $subcategory = $title) {
+% } elsif ($subcategory && $subcategory eq $title) {
 %   $sql = qq{select * from Image where category = "$ca" and subcategory = "$su" order by description limit ?, ?;};
 % } else {
 %   $sql = qq{select * from Image where category = "$ca" order by description limit ?, ?;};
@@ -55,8 +55,15 @@
 % $pdts->execute();
 % my @prodts = $pdts->fetchrow_array();
 % $pdts->finish();
+% my @top;
+% for (@prodts) {
+%   my $sth = $dbh->prepare(qq{select * from Image where url = "$_"}) if $_;
+%   $sth->execute() if defined $sth && $sth;
+%   my @tmp = $sth->fetchrow_array() if defined $sth && $sth;
+%   $sth->finish() if defined $sth && $sth;
+%   push @top, [@tmp] if $_;
+% }
 % $dbh->disconnect;
-% my $prodts;
 
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -178,6 +185,9 @@
           % }
           <li><a href="#"><%= decode 'utf8', $title %></a></li>
         </ol>
+          % if ($id == 108) {
+          %   $imglist = [map {$_} @top, @{$imglist}]
+          % }
           % my $mode = 4;
           % my $count = @{$imglist};
           % my $image_rows = int($count / ($mode + 0.01)) + 1;
@@ -190,13 +200,6 @@
             % } else {
               % $amount = $remain;
             % }
-            %# if ($title = encode 'utf8', '产品橱窗') {
-            %#   for (@prodts) {
-            %#     push @{$prodts}, ['', $_] if $_;
-            %#   }
-            %#   $amount += scalar @{$prodts};
-            %#   $imglist = [map {$_} @{$prodts}, @{$imglist}]
-            %# }
             %= tag div => (class => 'row') => begin
               % for (1 .. $amount) {
                 %= tag div => (class => "col-md-3") => begin

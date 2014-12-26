@@ -57,8 +57,8 @@ sub outline {
 sub concept {
   my $self = shift;
   my $sess = $self->session('user_id');
-  my @params = $self->param(['title1', 'subtitle1', 'image1', 'image2', 'image3']);
-  my $sql = qq{update IndexConcept set a = "$params[0]", b = "$params[1]", c = "$params[2]", d = "$params[3]", e = "$params[4]";};
+  my @params = $self->param(['title1', 'subtitle1', 'image1', 'image2', 'image3', 'image4', 'image5', 'image6', 'image7']);
+  my $sql = qq{update IndexConcept set a = "$params[0]", b = "$params[1]", c = "$params[2]", d = "$params[3]", e = "$params[4]", f = "$params[5]", g = "$params[6]", h = "$params[7]", i = "$params[8]";};
   if ($sess) {
     my $dbh = DBI->connect("DBI:mysql:database=$CMSConfig::database;host=$CMSConfig::host","$CMSConfig::user","$CMSConfig::pass", {RaiseError => 1, AutoCommit => 0});
     $dbh->do($sql);
