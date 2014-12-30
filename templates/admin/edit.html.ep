@@ -114,7 +114,7 @@
         $('#summernote').code($('#content').html());
         $('#publish').click(function(e){
           e.preventDefault();
-          $('textarea[name="content"]').html($('#summernote').code());
+          $('textarea[id="summernote"]').html($('#summernote').code());
           sm1();
         });
         $('#item-filter').change(function(){
