@@ -93,16 +93,17 @@
       document.getElementById("AdminContent").style.minHeight=sidebarHeight + "px";
       $(document).ready(function(){
         $('#summernote').summernote({
-          toolbar: [
-            ['style', ['style',]],
-            ['common', ['bold', 'italic', 'underline', 'superscript', 'subscript', 'strikethrough', 'clear',]],
-            ['fontsize', ['fontsize',]],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['height', ['height']],
-            ['insert', ['link', 'picture', 'video', 'table',]],
-            ['undo', ['undo', 'redo']],
-          ],
+          //toolbar: [
+          //  ['style', ['style',]],
+          //  ['common', ['bold', 'italic', 'underline', 'superscript', 'subscript', 'strikethrough', 'clear',]],
+          //  ['fontsize', ['fontsize',]],
+          //  ['color', ['color']],
+          //  ['para', ['ul', 'ol', 'paragraph']],
+          //  ['height', ['height']],
+          //  ['insert', ['link', 'picture', 'video', 'table',]],
+          //  ['undo', ['undo', 'redo']],
+          //  ['code', ['code']],
+          //],
           lang: 'zh-CN',
           height: 400,
           minHeight: 400,             // set minimum height of editor
