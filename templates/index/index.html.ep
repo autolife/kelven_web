@@ -44,51 +44,51 @@
         <div>
           <div class="Title" id="TableTitle">
             <div class="container" style="margin-left:0;padding-left:0">
-              <div class="page-header">
-                <h4>封面</h4>
-              </div>
-              <div class="row">
-                <div class="form-group">
-                  <label for="index_title" class="col-sm-1 control-label" style="position:relative;top:7px;">公司名称</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="index_title" name="company_name" placeholder="公司名称" value="<%=decode 'utf8', $r1[0]%>">
-                  </div>
-                </div>
-              </div>
-              <div class="row" style="margin-top:10px">
-                <div class="form-group">
-                  <label for="index_propa" class="col-sm-1 control-label" style="position:relative;top:7px;">宣传标语</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="index_propa" name = "propagation" placeholder="宣传标语" value="<%= decode 'utf8', $r1[1] %>">
-                    %= input_tag modify => "更新", type => 'submit', class => "btn btn-default", style => 'width:60px;margin-top:10px;', onclick => "sm1()";
-                  </div>
-                </div>
-              </div>
-              <div class="page-header">
-                <h4>概要</h4>
-              </div>
-              <div class="row" style="margin-top:10px">
-                <div class="form-group">
-                  <label for="pdt_category" class="col-sm-1 control-label" style="position:relative;top:7px;">产品目录</label>
-                  <div class="col-sm-5">
-                    <select class="form-control" id="pdt_category" name="pcategory">
-                      <option value="<%= decode 'utf8', $r2[0] %>"><%= decode 'utf8', $r2[0] %></option>
-                    % for (@{$pcategory}) {
-                        <option value="<%=decode 'utf8', $_->[0] %>"><%= decode 'utf8', $_->[0]%></option>
-                    % }
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="row" style="margin-top:10px">
-                <div class="form-group">
-                  <label for="introduction" class="col-sm-1 control-label" style="position:relative;top:7px;">公司介绍</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="introduction" name = "introduction" placeholder="公司介绍（URL地址)" value="<%= decode 'utf8', $r2[1] %>">
-                    %= input_tag modify => "更新", type => 'submit', class => "btn btn-default", style => 'width:60px;margin-top:10px;', onclick => "sm2()";
-                  </div>
-                </div>
-              </div>
+              <!-- <div class="page-header"> -->
+              <!--   <h4>封面</h4> -->
+              <!-- </div> -->
+              <!-- <div class="row"> -->
+              <!--   <div class="form-group"> -->
+              <!--     <label for="index_title" class="col-sm-1 control-label" style="position:relative;top:7px;">公司名称</label> -->
+              <!--     <div class="col-sm-5"> -->
+              <!--       <input type="text" class="form-control" id="index_title" name="company_name" placeholder="公司名称" value="<%=decode 'utf8', $r1[0]%>"> -->
+              <!--     </div> -->
+              <!--   </div> -->
+              <!-- </div> -->
+              <!-- <div class="row" style="margin-top:10px"> -->
+              <!--   <div class="form-group"> -->
+              <!--     <label for="index_propa" class="col-sm-1 control-label" style="position:relative;top:7px;">宣传标语</label> -->
+              <!--     <div class="col-sm-5"> -->
+              <!--       <input type="text" class="form-control" id="index_propa" name = "propagation" placeholder="宣传标语" value="<%= decode 'utf8', $r1[1] %>"> -->
+              <!--       %= input_tag modify => "更新", type => 'submit', class => "btn btn-default", style => 'width:60px;margin-top:10px;', onclick => "sm1()"; -->
+              <!--     </div> -->
+              <!--   </div> -->
+              <!-- </div> -->
+              <!-- <div class="page-header"> -->
+              <!--   <h4>概要</h4> -->
+              <!-- </div> -->
+              <!-- <div class="row" style="margin-top:10px"> -->
+              <!--   <div class="form-group"> -->
+              <!--     <label for="pdt_category" class="col-sm-1 control-label" style="position:relative;top:7px;">产品目录</label> -->
+              <!--     <div class="col-sm-5"> -->
+              <!--       <select class="form-control" id="pdt_category" name="pcategory"> -->
+              <!--         <option value="<%= decode 'utf8', $r2[0] %>"><%= decode 'utf8', $r2[0] %></option> -->
+              <!--       % for (@{$pcategory}) { -->
+              <!--           <option value="<%=decode 'utf8', $_->[0] %>"><%= decode 'utf8', $_->[0]%></option> -->
+              <!--       % } -->
+              <!--       </select> -->
+              <!--     </div> -->
+              <!--   </div> -->
+              <!-- </div> -->
+              <!-- <div class="row" style="margin-top:10px"> -->
+              <!--   <div class="form-group"> -->
+              <!--     <label for="introduction" class="col-sm-1 control-label" style="position:relative;top:7px;">公司介绍</label> -->
+              <!--     <div class="col-sm-5"> -->
+              <!--       <input type="text" class="form-control" id="introduction" name = "introduction" placeholder="公司介绍（URL地址)" value="<%= decode 'utf8', $r2[1] %>"> -->
+              <!--       %= input_tag modify => "更新", type => 'submit', class => "btn btn-default", style => 'width:60px;margin-top:10px;', onclick => "sm2()"; -->
+              <!--     </div> -->
+              <!--   </div> -->
+              <!-- </div> -->
               <div class="page-header">
                 <h4>理念</h4>
               </div>
